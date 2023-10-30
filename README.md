@@ -1,4 +1,4 @@
-Created by Ravi Koka, Abby Perryman
+Created by Ravi Koka, Abby Perryman, Anish Pandya
 
 To use the notebooks here, create a `conda` environment using *qgraph_env.yml*
 
