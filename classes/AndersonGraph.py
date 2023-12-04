@@ -69,7 +69,7 @@ class AndersonGraph:
             nt (int): number of time steps
         '''        
 
-        times = np.linspace(0, t, nt)
+        times = np.linspace(0, t_max, nt)
         
         history = []
 
