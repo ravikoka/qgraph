@@ -19,8 +19,10 @@ def plot_ipr_evolution(anderson_graph, t_max, nt):
     times = np.linspace(0, t_max, nt)
 
     ipr_history = [psi_to_ipr(psi) for psi in history]
-
-    plt.title("Inverse Participation Ratio of the Wave Function over Time")
+    
+    plt.title('Inverse Participation Ratio of the Wave Function over Time')
+    plt.xlabel('time')
+    plt.ylabel('Inverse Participation Ratio (IPR)')
     plt.plot(times, ipr_history)
 
 
