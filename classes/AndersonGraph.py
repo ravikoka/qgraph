@@ -60,7 +60,7 @@ class AndersonGraph:
         return self._time_evolution_operator(time) @ self.psi_0
     
 
-    def solve(self, t, nt): #t_steps):
+    def solve(self, t_max, nt): #t_steps):
         '''
         Calculate psi(t). 
 

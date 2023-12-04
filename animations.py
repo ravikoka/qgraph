@@ -1,11 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import networkx as nx
 
 from matplotlib.animation import FuncAnimation
 from classes.AndersonGraph import AndersonGraph
 
 plt.style.use('dark_background')
-
 
 
 def animate_lattice_pdf(anderson_lattice, t_max, W):
@@ -35,11 +35,29 @@ def animate_lattice_pdf(anderson_lattice, t_max, W):
         ax.set_title(f'Wave function probability density at time {frame}')
     
     ani = FuncAnimation(fig, update, frames=range(0, t_max), interval=100)
-    
     path = f'plots/lattice_animation_size_{n}_tmax_{t_max}_W_{W}.gif'
-    
-    #'torusanimation_n_' + str(n) + '_tmax_' + str(t_max)+ '_W_' + str(W) + '.gif'
     ani.save(path, writer='ffmpeg', fps=5)
     
     plt.show()
     
+
+def animate_random_graph_pdf(anderson_random_graph, t_max, W):
+    '''
+    Animate
+    '''
+    fig = plt.figure(figsize = (12,10))
+    ax = plt.gca()
+    
+    def update(frame):
+        ax.clear()
+        psi_t = anderson_random_graph.psi_at_t(frame)
+        density = np.real(np.multiply(psi_t.conj(), psi_t))
+        ax.set_title("Wave function probability density at time " + str(frame))
+        nx.draw(anderson_random_graph.graph, anderson_random_graph.pos, node_color = density, 
+                cmap = plt.cm.cividis, ax = ax, edge_color = 'white')
+
+    ani = FuncAnimation(fig, update, frames=range(0, t_max), interval=100)
+
+    path = f'plots/random_graph_animation_n_{anderson_random_graph.num_sites}_tmax_{t_max}_W_{W}_p_{anderson_random_graph.p}.gif'
+    ani.save(path, writer='ffmpeg', fps=5)
+    plt.show()
