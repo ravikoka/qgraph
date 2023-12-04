@@ -42,9 +42,11 @@ def animate_lattice_pdf(anderson_lattice, t_max):
     plt.show()
     
 
-def animate_random_graph_pdf(anderson_random_graph, t_max, W):
+def animate_random_graph_pdf(anderson_random_graph, t_max, p):
     '''
     Animate
+
+    Need to manually enter p.
     '''
     fig = plt.figure(figsize = (12,10))
     ax = plt.gca()
@@ -59,6 +61,7 @@ def animate_random_graph_pdf(anderson_random_graph, t_max, W):
 
     ani = FuncAnimation(fig, update, frames=range(0, t_max), interval=100)
 
-    path = f'plots/random_graph_animation_n_{anderson_random_graph.num_sites}_tmax_{t_max}_W_{anderson_random_graph.eps_range[1]}_p_{anderson_random_graph.p}.gif'
+    path = f'plots/random_graph_animation_n_{anderson_random_graph.num_sites}_tmax_{t_max}_W_{anderson_random_graph.eps_range[1]}_p_{p}.gif'
+    print(f'saving animation to {path}')
     ani.save(path, writer='ffmpeg', fps=5)
     plt.show()
