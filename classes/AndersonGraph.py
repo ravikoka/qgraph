@@ -3,6 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from scipy.linalg import expm
 
+plt.style.use('dark_background')
 
 class AndersonGraph:
     '''
@@ -74,7 +75,7 @@ class AndersonGraph:
         history = []
 
         for time in times:
-            psi_t = self._time_evolution_operator(time) @ self.psi_0
+            psi_t = self.psi_at_t(time) #self._time_evolution_operator(time) @ self.psi_0
             history.append(psi_t) 
         
         return history

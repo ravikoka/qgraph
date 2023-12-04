@@ -8,7 +8,7 @@ from classes.AndersonGraph import AndersonGraph
 plt.style.use('dark_background')
 
 
-def animate_lattice_pdf(anderson_lattice, t_max, W):
+def animate_lattice_pdf(anderson_lattice, t_max):
     
     n = int(np.sqrt(anderson_lattice.num_sites))
 
@@ -35,7 +35,8 @@ def animate_lattice_pdf(anderson_lattice, t_max, W):
         ax.set_title(f'Wave function probability density at time {frame}')
     
     ani = FuncAnimation(fig, update, frames=range(0, t_max), interval=100)
-    path = f'plots/lattice_animation_size_{n}_tmax_{t_max}_W_{W}.gif'
+    path = f'plots/lattice_animation_size_{n}_tmax_{t_max}_W_{anderson_lattice.eps_range[1]}.gif'
+    print(f'saving animation to {path}')
     ani.save(path, writer='ffmpeg', fps=5)
     
     plt.show()
@@ -58,6 +59,6 @@ def animate_random_graph_pdf(anderson_random_graph, t_max, W):
 
     ani = FuncAnimation(fig, update, frames=range(0, t_max), interval=100)
 
-    path = f'plots/random_graph_animation_n_{anderson_random_graph.num_sites}_tmax_{t_max}_W_{W}_p_{anderson_random_graph.p}.gif'
+    path = f'plots/random_graph_animation_n_{anderson_random_graph.num_sites}_tmax_{t_max}_W_{anderson_random_graph.eps_range[1]}_p_{anderson_random_graph.p}.gif'
     ani.save(path, writer='ffmpeg', fps=5)
     plt.show()
