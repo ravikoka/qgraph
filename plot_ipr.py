@@ -6,10 +6,12 @@ from classes.AndersonGraph import AndersonGraph
 
 
 def psi_to_ipr(psi):
-    newpsi = []
-    for x in psi:
-        newpsi.append((abs(x))**4)
-    return sum(newpsi)
+
+    #newpsi = []
+    #for x in psi:
+    #    newpsi.append((abs(x))**4)
+    #return sum(newpsi)
+    return np.sum(np.abs(psi)**4)
 
 
 def plot_ipr_evolution(anderson_graph, t_max, nt):
@@ -18,36 +20,33 @@ def plot_ipr_evolution(anderson_graph, t_max, nt):
 
     ipr_history = [psi_to_ipr(psi) for psi in history]
 
-    #localizationlist = []
-    #for vect in hist:
-        #localizationlist.append(magto4(vect))
-
     plt.title("Inverse Participation Ratio of the Wave Function over Time")
     plt.plot(times, ipr_history)
 
 
-def plot_ipr_vs_W(graph, time, t_hop, W_max, num_trials, graph_name):
+def plot_ipr_vs_W(graph, time, site_num, t_hop, W_max, num_trials, graph_name):
     '''
     Plot IPR, a measure of wavefuntion localization, for various values of W, the disorder parameter. 
     œ
     Args
         graph (networkx graph):
         time ():
+        site_num ():
         t_hop (float):
         num_trials (int):
         graph_name (str):
     '''
     W_vals = np.linspace(0, W_max, W_max)
     n = graph.number_of_nodes()
+    psi_0 = np.zeros(n)
+    #psi_0[np.random.randint(0, n)] = 1
+    psi_0[site_num] = 1
 
     ipr_averages = []
     for W in W_vals:
 
         ipr_vals = []
         for _ in range(num_trials):
-
-            psi_0 = np.zeros(n)
-            psi_0[np.random.randint(0, n)] = 1
 
             anderson_graph = AndersonGraph(graph=graph, psi_0=psi_0, eps_range=[-W, W], t_hop=t_hop) 
             psi_t = anderson_graph.psi_at_t(time)

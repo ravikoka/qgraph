@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 
 plt.style.use('dark_background')
 
+
 def plot_lattice_pdf(anderson_lattice, time, fix_z_scale=True):
     '''
     Plot the PDF of the wavefunction on a 2D periodic square lattice (torus).
