@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 
 from matplotlib.animation import FuncAnimation
-from classes.AndersonGraph import AndersonGraph
+from AndersonGraph import AndersonGraph
 
 plt.style.use('dark_background')
 
