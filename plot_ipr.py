@@ -6,15 +6,23 @@ from AndersonGraph import AndersonGraph
 
 
 def psi_to_ipr(psi):
+    '''
+    Convert the wavefunction in the site basis into the Inverse Participation Ratio (IPR).
+    '''
 
-    #newpsi = []
-    #for x in psi:
-    #    newpsi.append((abs(x))**4)
-    #return sum(newpsi)
     return np.sum(np.abs(psi)**4)
 
 
 def plot_ipr_evolution(anderson_graph, t_max, nt):
+    '''
+    Plot IPR of the wavefunction as function of time. The time domain runs from 0 to t_max in nt steps. 
+
+    Args
+        anderson_graph (AndersonGraph): anderson graph to time evolve the wavefunction on. 
+        t_max (float): the final time. 
+        nt (int): number of points in the time domain.  
+    '''
+
     history = anderson_graph.solve(t_max=t_max, nt=nt)
     times = np.linspace(0, t_max, nt)
 
@@ -29,15 +37,19 @@ def plot_ipr_evolution(anderson_graph, t_max, nt):
 def plot_ipr_vs_W(graph, time, site_num, t_hop, W_max, num_trials, graph_name):
     '''
     Plot IPR, a measure of wavefuntion localization, for various values of W, the disorder parameter. 
-    œ
+    Each IPR value is averaged over multiple trials, and the time is held fixed.
+    
     Args
-        graph (networkx graph):
-        time ():
-        site_num ():
-        t_hop (float):
-        num_trials (int):
-        graph_name (str):
+        graph (networkx graph): the underlying graph to time evolve on. 
+        time (float): time at which IPR is calculated. 
+        site_num (int): a value between 0 and the number of nodes in graph. Sets the intial site of the wavefunction. 
+            The intial wavefunction is set to have probability density of 1 at the site indexed by site_num, and 0 elsewhere. 
+        t_hop (float): hopping parameter. 
+        W_max (float): the maximum value of W. The W domain runs between 0 and W_max in steps of 1. 
+        num_trials (int): number of trials to average over. 
+        graph_name (str): name of the graph. Used in the plot title.
     '''
+
     W_vals = np.linspace(0, W_max, W_max)
     n = graph.number_of_nodes()
     psi_0 = np.zeros(n)
@@ -64,16 +76,18 @@ def plot_ipr_vs_W(graph, time, site_num, t_hop, W_max, num_trials, graph_name):
 
 def plot_ipr_vs_p(num_pts, num_sites, time, W_vals, psi_0, t_hop, num_trials):
     '''
-    Plot an IPR vs. p curve for multiple W values. 
+    Plot multiple IPR vs. p curves, each for a value of W.  
+    Here the underlying graph is assumed to be a random_graph = nx.erdos_renyi_graph(n, p). 
+    Each IPR value is averaged over multiple trials, and the time is held fixed.    
 
     Args
-        num_pts (int):
+        num_pts (int): number of points in the p domain. The p domain runs from 0 to 1 in num_pts steps. 
         num_sites (int): number of sites in random graph
-        time (float):
-        W_vals (array-like):
-        psi_0 (1D nd array):
-        t_hop (float):
-        num_trials (int):
+        time (float): time at which IPR is calculated. 
+        W_vals (array-like[float]): values of W for which an IPR vs. p curve is calculated.
+        psi_0 (1D nd array): initial wavefunction in the lattice site basis. 
+        t_hop (float): hopping parameter.
+        num_trials (int): number of trials to average over. 
     '''
 
     p_vals = np.linspace(0, 1, num_pts)

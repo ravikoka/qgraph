@@ -9,7 +9,16 @@ plt.style.use('dark_background')
 
 
 def animate_lattice_pdf(anderson_lattice, t_max):
-    
+    '''
+    Animate the wavefunction PDF on a periodic square lattice vs. time. 
+    To do: make this work with any 'rectangular' periodic lattice. 
+
+    Args
+        anderson_lattice (AndersonGraph): the anderson graph to time evolve. anderson_lattice.graph must be a periodic square graph.
+            To make a periodic square lattice, use anderson_lattice.graph = nx.grid_graph(dim=[n, n], periodic=True).
+        t_max (int): the final time. The time domain proceeds from 0 to t_max in steps of 1.
+    '''
+
     n = int(np.sqrt(anderson_lattice.num_sites))
 
     fig = plt.figure(figsize = (12,10))
@@ -44,10 +53,17 @@ def animate_lattice_pdf(anderson_lattice, t_max):
 
 def animate_random_graph_pdf(anderson_random_graph, t_max, p):
     '''
-    Animate
+    Animate the wavefunction PDF on a random graph vs. time. 
+    To do: determine how to get p out of a networkx graph. 
 
-    Need to manually enter p.
+    Args
+        anderson_random_graph (AndersonGraph): the anderson graph to time evolve. anderson_random_graph.graph must be a random graph.
+            To create a random graph, use random_graph = nx.erdos_renyi_graph(n, p).
+        t_max (int): the final time. The time domain proceeds from 0 to t_max in steps of 1.
+        p (float, between 0.0 and 1.0): this is p associated with anderson_random_graph.graph, the probability an edge exists.
+            Disclaimer: this is a workaround to save the animation with a title that contains p. 
     '''
+    
     fig = plt.figure(figsize = (12,10))
     ax = plt.gca()
     

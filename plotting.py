@@ -11,9 +11,10 @@ def plot_lattice_pdf(anderson_lattice, time, fix_z_scale=True):
     
     Args
         anderson_lattice (AndersonGraph): 2D anderson lattice (ie. a torus)
-        time (float):
+        time (float): time at which the PDF is calculated. 
         fix_z_scale (bool): if True, fix the height of the z axis to 1.
     '''
+    
     psi_t = anderson_lattice.psi_at_t(time)
     density = np.real(np.multiply(psi_t.conj(), psi_t))
     n = int(np.sqrt(len(density)))
@@ -26,8 +27,6 @@ def plot_lattice_pdf(anderson_lattice, time, fix_z_scale=True):
     
     X, Y = np.meshgrid(x, y)
 
-    #surf = ax.plot_surface(X, Y, density, cmap = plt.cm.cividis)
-
     ax.plot_surface(X, Y, density, cmap = plt.cm.cividis)
 
     if fix_z_scale:
@@ -38,7 +37,5 @@ def plot_lattice_pdf(anderson_lattice, time, fix_z_scale=True):
     ax.set_xlabel('x', labelpad=20)
     ax.set_ylabel('y', labelpad=20)
     ax.set_zlabel('Probability Density', labelpad=20)
-
-    #plt.colorbar(surf)
 
     plt.show()
