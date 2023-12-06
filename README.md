@@ -57,7 +57,7 @@ Multiple code examples can be found in [summary.ipynb](summary.ipynb).
 
 To create an instance of an `AndersonGraph` object, the constructor takes as arguments a NetworkX graph object (a simple graph), an array of wave functions at each site, a range of values on which $\epsilon$ can be sampled from, and the hopping parameter $t$.
 
-Here is a basic example creating an 80-site 1D ring with $| \psi(0) \rangle$ fully localized at a single site and $W$ = 1, .
+Here is a basic example creating an 80-site 1D ring with $| \psi(0) \rangle$ fully localized at a single site and $W = 1$.
 ```python
 import AndersonGraph as ag # The exact form of this may change based on the relative location of AndersonGraph.py
 
@@ -78,12 +78,12 @@ And here is the plot output:
 
 ## 1D Ring
 ### Diffusive Case
-$W$ = 0
+$W = 0 $
 
 <img src="https://github.com/ravikoka/qgraph/blob/main/plots/diffusive_ring_W_0.gif" width="500">
 
 ### Localized Case
-$W$ = 10
+$W = 10$
 
 <img src="https://github.com/ravikoka/qgraph/blob/main/plots/localized_ring_W_10.gif" width="500">
 
@@ -95,12 +95,12 @@ $W$ = 10
 <!--
 ![Diffusive time evolution from delta function start](plots/diffusiontorus.gif)
 -->
-$W$ = 0
+$W = 0$
 
 <img src="https://github.com/ravikoka/qgraph/blob/main/plots/diffusiontorus.gif" width="500">
 
 ### Localized Case
-$W$ = 10
+$W = 10$
 
 <img src="https://github.com/ravikoka/qgraph/blob/main/plots/localizationtorus.gif" width="500">
 
@@ -109,12 +109,12 @@ $W$ = 10
 
 ## Random Graph
 ### Diffusive Case
-$W$ = 0
+$W = 0$
 
 <img src="https://github.com/ravikoka/qgraph/blob/main/plots/randomgraphanimation_n_100_tmax_40_W_0.gif" width="500">
 
 ### Localized Case
-$W$ = 100
+$W = 100$
 
 <img src="https://github.com/ravikoka/qgraph/blob/main/plots/randomgraphanimation_n_100_tmax_40_W_100.gif" width="500">
 
