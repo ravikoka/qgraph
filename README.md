@@ -73,7 +73,7 @@ anderson_ring.plot_density(t=17) # Plot the time evolution of the system
 And here is the plot output:
 <img src="plots/ring_t_17.png" width="500">
 
-# Plot Examples
+# Plot and Animation Examples
 
 ## 1D Ring
 ### Diffusive Case
