@@ -78,7 +78,7 @@ And here is the plot output:
 ## 1D Ring
 ### Diffusive Case
 $W$ = 0
-<img src="plots/diffusive_ring_W_0.gif" width="500">
+<img src="https://github.com/ravikoka/qgraph/blob/main/plots/diffusive_ring_W_0.gif" width="500">
 
 ### Localized Case
 $W$ = 10
