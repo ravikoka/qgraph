@@ -114,6 +114,7 @@ $W$ = 0
 
 ### Localized Case
 $W$ = 100
+
 <img src="https://github.com/ravikoka/qgraph/blob/main/plots/randomgraphanimation_n_100_tmax_40_W_100.gif" width="500">
 
 ### IPR
