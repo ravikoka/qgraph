@@ -58,7 +58,7 @@ To create an instance of an `AndersonGraph` object, the constructor takes as arg
 
 Here is a basic example creating an 80-site 1D ring with $| \psi(0) \rangle$ fully localized at a single site and $W$ = 1, .
 ```python
-import AndersonGraph as ag
+import AndersonGraph as ag # The exact form of this may change based on the relative location of AndersonGraph.py
 
 N = 80 # Define number of sites
 psi_0 = np.zeros(n)
