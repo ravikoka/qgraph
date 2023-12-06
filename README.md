@@ -28,9 +28,9 @@ The Hamiltonian for the tight binding model for a single electron can be written
 
 $$\langle n | H | m \rangle = H_{n,m} = \epsilon \delta_{n,m} - t(\delta_{n+1,m} + \delta_{n-1,m} )$$
 
-where $H$ is the electron Hamiltonian, $\delta$ is the Kronecker delta, $\epsilon$ is the binding energy, and $t$ is time. $n$ and $m$ refer to states associated with a particular site as in the tight binding formalism.
+where $H$ is the electron Hamiltonian, $\delta$ is the Kronecker delta, $\epsilon$ is the binding energy, and $t$ is the hopping parameter (time). $n$ and $m$ refer to states associated with a particular site as in the tight binding formalism.
 
-Anderson localization can be demonstrated on this model when the diagonal of the Hamiltonian $H$ is randomized and if values of $\epsilon$ are randomly sampled from a uniform distribution $[-W, \, W]$ where $W$ is known as the disorder parameter. In this case, larger $W$ correlates with increased localization.
+Anderson localization can be demonstrated on this model when the diagonal of the Hamiltonian $H$ is randomized and if values of $\epsilon$ are randomly sampled from a uniform distribution on $[-W, \, W]$ where $W$ is known as the disorder parameter. In this case, larger $W$ correlates with increased localization.
 
 ## Time Evolution
 
@@ -52,14 +52,30 @@ Multiple code examples can be found in [analysis.ipynb](analysis.ipynb).
 
 [plotting.py](plotting.py) has functions for plotting states of the graph. [animations.py](animations.py) has functions for generating animations graphs. [plot_ipr.py](plot_ipr.py) has functions for plotting the IPR of a graph. Most of these functions take an `AndersonGraph` object and a few visual parameters.
 
-To create an instance of an `AndersonGraph` object, 
+To create an instance of an `AndersonGraph` object, the constructor takes as arguments a NetworkX graph object (a simple graph), an array of wave functions at each site, a range of values on which $\epsilon$ can be sampled from, and the hopping parameter $t$.
+
+Here is a basic example creating an 80-site 1D ring with $| \psi(0) \rangle$ and $W$ = 1, fully localized at a single site.
+```python
+import AndersonGraph as ag
+
+n = 80
+psi_0 = np.zeros(n)
+psi_0[n//2] = 1
+
+ring = nx.grid_graph(dim=[80], periodic=True)
+
+anderson_ring = ag.AndersonGraph(graph=ring, psi_0=psi_0, eps_range=[-1, 1], t_hop=1)
+
+anderson_ring.plot_density(t=17)
+```
+And here is the plot output:
+<img src="plots/ring_t_17.png" width="500">
 
 # Plot Examples
 
 ## 1D Ring
 ### Diffusive Case
 $W$ = 0
-<img src="https://raw.githubusercontent.com/ravikoka/qgraph/main/plots/diffusive_ring_W_0.gif" width = 500>
 <img src="plots/diffusive_ring_W_0.gif" width="500">
 
 ### Localized Case
