@@ -92,7 +92,7 @@ class AndersonGraph:
 
         times = np.linspace(0, t_max, nt)
         
-        history = [self.psi_0]
+        history = []
 
         for time in times:
             #self._time_evolution_operator(time) @ self.psi_0
