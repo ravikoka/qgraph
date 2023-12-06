@@ -59,6 +59,7 @@ To create an instance of an `AndersonGraph` object,
 ## 1D Ring
 ### Diffusive Case
 $W$ = 0
+![gif-test](plots/diffusive_ring_W_0.gif)
 <img src="plots/diffusive_ring_W_0.gif" width="500">
 
 ### Localized Case
