@@ -54,19 +54,19 @@ Multiple code examples can be found in [analysis.ipynb](analysis.ipynb).
 
 To create an instance of an `AndersonGraph` object, the constructor takes as arguments a NetworkX graph object (a simple graph), an array of wave functions at each site, a range of values on which $\epsilon$ can be sampled from, and the hopping parameter $t$.
 
-Here is a basic example creating an 80-site 1D ring with $| \psi(0) \rangle$ and $W$ = 1, fully localized at a single site.
+Here is a basic example creating an 80-site 1D ring with $| \psi(0) \rangle$ fully localized at a single site and $W$ = 1, .
 ```python
 import AndersonGraph as ag
 
-n = 80
+N = 80 # Define number of sites
 psi_0 = np.zeros(n)
-psi_0[n//2] = 1
+psi_0[N//2] = 1 # Create wave function
 
-ring = nx.grid_graph(dim=[80], periodic=True)
+ring = nx.grid_graph(dim=[N], periodic=True) # Create ring
 
-anderson_ring = ag.AndersonGraph(graph=ring, psi_0=psi_0, eps_range=[-1, 1], t_hop=1)
+anderson_ring = ag.AndersonGraph(graph=ring, psi_0=psi_0, eps_range=[-1, 1], t_hop=1) # Construct AndersonGraph object
 
-anderson_ring.plot_density(t=17)
+anderson_ring.plot_density(t=17) # Plot the time evolution of the system
 ```
 And here is the plot output:
 <img src="plots/ring_t_17.png" width="500">
