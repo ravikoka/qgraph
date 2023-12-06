@@ -26,7 +26,7 @@ An electron can exist in sites $| 1 \rangle , \, | 2 \rangle , \, \ldots , | N \
 The Hamiltonian for the tight binding model for a single electron can be written as follows:
 
 
-$$\langle n | H | m \rangle = H_{n,m} = \epsilon \delta_{n,m} - t(\delta_{n+1,m} + \delta_{n-1,m} )$$
+$$\langle n | H | m \rangle = H_{n,m} = \underbrace{\epsilon \delta_{n,m}}_\textrm{binding} \underbrace{- t(\delta_{n+1,m} + \delta_{n-1,m} )}_\textrm{hopping}$$
 
 where $H$ is the electron Hamiltonian, $\delta$ is the Kronecker delta, $\epsilon$ is the binding energy, and $t$ is the hopping parameter (time). $n$ and $m$ refer to states associated with a particular site as in the tight binding formalism.
 
