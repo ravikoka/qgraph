@@ -135,6 +135,7 @@ A good overview of Anderson Localization by Guan and Guan can be found in the "r
 
 1. **Generalize to Many-Body Case**: Our single-electron approach allows for a closed-form solution for the wave function at any point in time. Introducing multiple electrons would necessitate making a choice about iterative and approximate solution methods and would introduce more complex quantum mechanical behaviors.
 2. **Introduce Different Boundary Conditions**: Every connection on the graph here behaves as a periodic boundary condition — that is, the electron is free to travel between any node unhindered by reflective, absorptive, or other effects.
+3. **Add Graph Directionality and Weight**: Extensions past simple graph structures may be able to realize more complex physical phenomena, inclding transport phenomena and variable site spacing.
 
 # Major Dependencies
 This project makes extensive use of [NetworkX](https://github.com/networkx/networkx) for representing graph structures.
