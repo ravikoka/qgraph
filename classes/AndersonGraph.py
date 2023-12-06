@@ -72,7 +72,7 @@ class AndersonGraph:
         return self._time_evolution_operator(time) @ self.psi_0
     
 
-    def solve(self, t_max, nt): #t_steps):
+    def simulate(self, t_max, nt): #t_steps):
         '''
         Calculate psi(t) for a sequence of times. 
 
@@ -86,12 +86,11 @@ class AndersonGraph:
 
         times = np.linspace(0, t_max, nt)
         
-        history = []
+        history = [self.psi_0]
 
         for time in times:
-            psi_t = self.psi_at_t(time) #self._time_evolution_operator(time) @ self.psi_0
-            history.append(psi_t) 
-        
+            #self._time_evolution_operator(time) @ self.psi_0
+            history.append(self._time_evolution_operator(time) @ self.psi_0)
         return history
     
 
@@ -103,7 +102,7 @@ class AndersonGraph:
         return nx.draw(self.graph)
 
 
-    def plot_density(self, t):# axisstabilized = False):
+    def plot_density(self, t, node_size=10, line_width=1, layout=None):# axisstabilized = False):
         '''
         Plot the probability density, aka |psi(t)|^2
 
@@ -113,11 +112,15 @@ class AndersonGraph:
         
         #fig = plt.figure(figsize = (12,10))
         #psi_t = self._time_evolution(t) @ self.psi_0
+        plt.style.use('dark_background')
         psi_t = self.psi_at_t(t)
         density = np.real(np.multiply(psi_t.conj(), psi_t))
         
         #plt.title("Wave function probability density at time " + str(t) + "\n p = " + str(self.p)) 
-      
-        nx.draw(self.graph, self.pos, node_color = density, cmap = plt.cm.cividis)
+        if layout == None:
+            self.pos=nx.spring_layout(self.graph)
+        else:
+            self.pos = layout
+        nx.draw(self.graph, self.pos, node_color = density, cmap = plt.cm.cividis, node_size = node_size, width = line_width)
         
         plt.show()
