@@ -19,7 +19,7 @@ There is direct support for calculating the inverse participation ratio (IPR), a
 
 ## The Tight Binding Model
 
-An electron can exist in sites $1 , \, 2 , \ldots , N$ with states $| 1 \rangle , \, | 2 \rangle , \ldots , | N \rangle$ (where $N$ is the total number of sites). Different sites have arbitrary connections to each other, with the connections forming a simple graph. This graph can then be represented by an $N \times N$ adjacency matrix.
+An electron can exist in finitely many discrete sites $1 , \, 2 , \ldots , N$ with states $| 1 \rangle , \, | 2 \rangle , \ldots , | N \rangle$ (where $N$ is the total number of sites). Different sites have arbitrary connections to each other, with the connections forming a simple graph. This graph can then be represented by an $N \times N$ adjacency matrix.
 
 The state of the electron is denoted $| \psi \rangle$ and is a normalized linear combination of the site states.
 
