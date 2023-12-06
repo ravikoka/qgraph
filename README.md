@@ -78,11 +78,13 @@ And here is the plot output:
 ## 1D Ring
 ### Diffusive Case
 $W$ = 0
+
 <img src="https://github.com/ravikoka/qgraph/blob/main/plots/diffusive_ring_W_0.gif" width="500">
 
 ### Localized Case
 $W$ = 10
-<img src="plots/localized_ring_W_10.gif" width="500">
+
+<img src="https://github.com/ravikoka/qgraph/blob/main/plots/localized_ring_W_10.gif" width="500">
 
 ### IPR
 <img src="plots/ringipr.png" width="500">
@@ -93,11 +95,13 @@ $W$ = 10
 ![Diffusive time evolution from delta function start](plots/diffusiontorus.gif)
 -->
 $W$ = 0
-<img src="plots/diffusiontorus.gif" width="500">
+
+<img src="https://github.com/ravikoka/qgraph/blob/main/plots/diffusiontorus.gif" width="500">
 
 ### Localized Case
 $W$ = 10
-<img src="plots/localizationtorus.gif" width="500">
+
+<img src="https://github.com/ravikoka/qgraph/blob/main/plots/localizationtorus.gif" width="500">
 
 ### IPR 
 <img src="plots/torus_ipr.png" width="500">
@@ -105,11 +109,12 @@ $W$ = 10
 ## Random Graph
 ### Diffusive Case
 $W$ = 0
-<img src="plots/randomgraphanimation_n_100_tmax_40_W_0.gif" width="500">
+
+<img src="https://github.com/ravikoka/qgraph/blob/main/plots/randomgraphanimation_n_100_tmax_40_W_0.gif" width="500">
 
 ### Localized Case
 $W$ = 100
-<img src="plots/randomgraphanimation_n_100_tmax_40_W_100.gif" width="500">
+<img src="https://github.com/ravikoka/qgraph/blob/main/plots/randomgraphanimation_n_100_tmax_40_W_100.gif" width="500">
 
 ### IPR
 <img src="plots/randomgraphipr.png" width="500">
