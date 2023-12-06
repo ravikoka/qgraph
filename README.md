@@ -28,7 +28,7 @@ The Hamiltonian for the tight binding model for a single electron can be written
 
 $$\langle n | H | m \rangle = H_{n,m} = \epsilon \delta_{n,m} - t(\delta_{n+1,m} + \delta_{n-1,m} )$$
 
-where $H$ is the Hamiltonian, $\delta$ is the Kronecker delta, $\epsilon$ is the binding energy, and $t$ is time. $n$ and $m$ index the adjacency matrix describing the graph.
+where $H$ is the electron Hamiltonian, $\delta$ is the Kronecker delta, $\epsilon$ is the binding energy, and $t$ is time. $n$ and $m$ refer to states associated with a particular site as in the tight binding formalism.
 
 Anderson localization can be demonstrated on this model when the diagonal of the Hamiltonian $H$ is randomized and if values of $\epsilon$ are randomly sampled from a uniform distribution $[-W, \, W]$ where $W$ is known as the disorder parameter. In this case, larger $W$ correlates with increased localization.
 
@@ -59,7 +59,7 @@ To create an instance of an `AndersonGraph` object,
 ## 1D Ring
 ### Diffusive Case
 $W$ = 0
-![gif-test](plots/diffusive_ring_W_0.gif)
+<img src="https://raw.githubusercontent.com/ravikoka/qgraph/main/plots/diffusive_ring_W_0.gif" width = 500>
 <img src="plots/diffusive_ring_W_0.gif" width="500">
 
 ### Localized Case
