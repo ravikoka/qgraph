@@ -23,10 +23,16 @@ class AndersonGraph:
     def __init__(self, graph, psi_0, eps_range, t_hop):
         self.graph = graph
         self.psi_0 = psi_0
+
+        self.num_sites = self.graph.number_of_nodes()
+        
+        # Checks if number of nodes on graph matches number of nodes for wave function
+        if self.num_sites != len(self.psi_0):
+            raise ValueError("Number of nodes on the graph does not match the length of the wave function")
+
         self.eps_range = eps_range
         self.t_hop = t_hop
 
-        self.num_sites = self.graph.number_of_nodes()
         self.binding = np.diagflat(np.random.uniform(*self.eps_range, size=self.num_sites))
         self.pos = nx.spring_layout(self.graph)
 
