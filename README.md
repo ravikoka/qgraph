@@ -50,9 +50,9 @@ IPR takes a range of $1 / N$ to $1$, with the former being the least localized a
 # Basic Usage
 `AndersonGraph.py` contains the `AndersonGraph` class which implements the tight binding model on a graph, with the input graph being a NetworkX graph object.
 
-Multiple code examples can be found in [analysis.ipynb](analysis.ipynb).
+Multiple code examples can be found in [summary.ipynb](summary.ipynb).
 
-[plotting.py](plotting.py) has functions for plotting states of the graph. [animations.py](animations.py) has functions for generating animations graphs. [plot_ipr.py](plot_ipr.py) has functions for plotting the IPR of a graph. Most of these functions take an `AndersonGraph` object and a few visual parameters.
+[plotting.py](plotting.py) has functions for plotting states of the graph. [animations.py](utils/animations.py) has functions for generating animations graphs. [plot_ipr.py](utils/plot_ipr.py) has functions for plotting the IPR of a graph. Most of these functions take an `AndersonGraph` object and a few visual parameters.
 
 To create an instance of an `AndersonGraph` object, the constructor takes as arguments a NetworkX graph object (a simple graph), an array of wave functions at each site, a range of values on which $\epsilon$ can be sampled from, and the hopping parameter $t$.
 
