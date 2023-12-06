@@ -122,9 +122,11 @@ The basic setup here of allowing an electron to exist in discrete, finite spaces
 2. **Quantum Dot Cellular Automata**: A computing paradigm that is an alternative to standard transistor-based computing, based on cellular automata. Encodes information in charges localized in quantum dots.
 3. **Many-Body Localization**: Anderson localization can be extended to the localization of many bodies, something thermodynamically interesting.
 
-# Class Resources
+# Resources
 
 This started as a project for PHY 381C (Computational Physics) at UT Austin ([class website](http://www.wgilpin.com/cphy/)). [Here](resources/Anderson%20Localization.pptx) is a link to a presentation given in-class on this repository, which is provided in case anyone finds it useful. It is also available as a PDF (which precludes animationes) [here](resources/Anderson%20Localization.pdf).
+
+A good overview of Anderson Localization by Guan and Guan can be found in the "resources" folder [here](resources/GuanChenguang.pdf).
 
 
 # Future Directions
