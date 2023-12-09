@@ -1,3 +1,5 @@
+# Tight Binding and Anderson Localization on Arbitrary Graphs
+
 ### Created by Ravi Koka, Abby Perryman, Anish Pandya, Patrick Devaney
 
 # Getting Started
