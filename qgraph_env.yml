@@ -12,6 +12,6 @@ dependencies:
   - scipy
   - pandas
   - networkx
-  - numba
+  - jax>=0.1.57
 
 

@@ -20,6 +20,7 @@ class GraphUnittestClass(unittest.TestCase):
     
     def test_time_evolution(self):
         self.assertEqual(self.AndersonGraph._time_evolution(0), self.psi_0)
+        self.assertEqual(self.AndersonGraph._time_evolution(1), self.psi_0)
 
     def test_propogate(self):
         pass
