@@ -64,7 +64,7 @@ Here is a basic example creating an 80-site 1D ring with $| \psi(0) \rangle$ ful
 import AndersonGraph as ag # The exact form of this may change based on the relative location of AndersonGraph.py
 
 N = 80 # Define number of sites
-psi_0 = np.zeros(n)
+psi_0 = np.zeros(N)
 psi_0[N//2] = 1 # Create wave function
 
 ring = nx.grid_graph(dim=[N], periodic=True) # Create ring
